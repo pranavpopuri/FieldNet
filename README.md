@@ -6,12 +6,12 @@
 
 ## Problem Statement
 
-During corn harvest, combines must continuously offload grain to hopper carts, which then transfer to trucks that haul grain to silos. When a combine's hopper fills and no truck is available, the combine sits idle—wasting precious time during a narrow harvest window.
+During corn harvest, combines must continuously offload grain to hopper carts, which then transfer to trucks that haul grain to silos. When a combine's hopper fills and no truck is available, the combine sits idle, wasting precious time during a narrow harvest window.
 
 The challenge is compounded by variable silo queue times. When queues are long, trucks take longer to cycle back, increasing the risk of combine idle time. Farmers currently have no way to predict or adapt to these conditions in real-time.
 
 **Key pain points:**
-- Combine idle time reduces harvest efficiency by 10-25%
+- Combine idle time reduces harvest efficiency, leading to a longer, less, profitable harvest.
 - Variable silo queues make logistics unpredictable
 - No visibility into how field yield variation affects equipment timing
 - Fleet sizing decisions are made without simulation data
@@ -26,8 +26,8 @@ FieldNet uses satellite-derived yield maps and discrete-event simulation to opti
 
 | Strategy | Description | Best When |
 |----------|-------------|-----------|
-| **Case 1: High-to-Low Yield** | Start harvesting from the high-yield end of the field | Silo queues are short, trucks cycle quickly |
-| **Case 2: Low-to-High Yield** | Start from the low-yield end to slow hopper fill rate | Silo queues are long, trucks need more return time |
+| **Case 1: High-to-Low Yield** | Start harvesting from the higher-yield end of the field | Silo queues are short, trucks cycle quickly |
+| **Case 2: Low-to-High Yield** | Start from the lower-yield end to slow hopper fill rate | Silo queues are long, trucks need more return time |
 
 FieldNet simulates both strategies with your actual field data and fleet configuration, then recommends the approach that minimizes total harvest time.
 
@@ -36,7 +36,7 @@ FieldNet simulates both strategies with your actual field data and fleet configu
 ## Technical Approach
 
 ### Data Pipeline
-1. **Satellite Imagery**: Sentinel-2 NDVI data via Google Earth Engine
+1. **Satellite Imagery**: Sentinel-2 data via Google Earth Engine
 2. **Yield Estimation**: WDRVI-based yield model calibrated for corn (Bu/Ac)
 3. **Road Network**: OpenStreetMap via Overpass API for pickup points
 4. **Routing**: OSRM for accurate field-to-silo distances
