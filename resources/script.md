@@ -3,9 +3,9 @@
 ## INTRO (0:00 - 0:20)
 *[Screen: Title slide or app loading]*
 
-"Every fall, corn farmers face a critical logistics challenge. When a combine harvester's hopper fills up and no truck is available to take the grain, the combine sits idle—wasting time during a narrow harvest window. This idle time can reduce harvest efficiency by 10 to 25 percent.
+Every harvest season, farmers have to solve the logistics problem of how to best harvest their corn.
 
-FieldNet solves this by using satellite data and simulation to optimize how you harvest your field."
+FieldNet helps corn solves this by using satellite data and simulation to optimize how you harvest your field."
 
 ---
 
