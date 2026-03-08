@@ -308,11 +308,11 @@ const SatelliteMap = () => {
         nodes[node.id] = [node.lat, node.lon]
       })
 
-      // Rectangle dimensions with 16.8% extension
+      // Rectangle dimensions with 25.2% extension (50% longer than before)
       const latSpan = ne_lat - sw_lat
       const lonSpan = ne_lon - sw_lon
-      const latExtension = latSpan * 0.168
-      const lonExtension = lonSpan * 0.168
+      const latExtension = latSpan * 0.252
+      const lonExtension = lonSpan * 0.252
 
       // Clipping bounds (12% beyond rectangle)
       const clipMinLat = sw_lat - latExtension
@@ -527,6 +527,15 @@ const SatelliteMap = () => {
       setYieldRange({ min: data.min_yield, max: data.max_yield })
       setYieldMatrix(data.yield_matrix)
       setShowOverlay(true)
+
+      // Zoom to the field bounds
+      if (mapRef.current && bounds) {
+        const fieldBounds = L.latLngBounds(
+          [bounds.sw_lat, bounds.sw_lon],
+          [bounds.ne_lat, bounds.ne_lon]
+        )
+        mapRef.current.fitBounds(fieldBounds, { padding: [50, 50] })
+      }
 
       setTimeout(() => {
         const map = mapRef.current
