@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Hopper body - trapezoidal grain cart -->
+  <path d="M8 16 L56 16 L52 44 L12 44 Z" fill="#E53935" stroke="#B71C1C" stroke-width="2"/>
+
+  <!-- Grain inside -->
+  <path d="M12 20 L52 20 L49 38 L15 38 Z" fill="#FDD835"/>
+
+  <!-- Wheels -->
+  <circle cx="18" cy="52" r="8" fill="#424242" stroke="#212121" stroke-width="2"/>
+  <circle cx="46" cy="52" r="8" fill="#424242" stroke="#212121" stroke-width="2"/>
+
+  <!-- Wheel hubs -->
+  <circle cx="18" cy="52" r="3" fill="#757575"/>
+  <circle cx="46" cy="52" r="3" fill="#757575"/>
+
+  <!-- Axle bar -->
+  <rect x="10" y="44" width="44" height="4" fill="#616161"/>
+
+  <!-- Top rim -->
+  <rect x="6" y="12" width="52" height="4" fill="#C62828" rx="1"/>
+</svg>
